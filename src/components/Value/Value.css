@@ -1,0 +1,87 @@
+.v-container .image-container {
+  border: 8px solid rgb(232 232 232 / 93%);
+  /* Adiciona uma borda cinza clara com opacidade de 93% ao container da imagem dentro de .v-container */
+}
+
+.v-container > div {
+  flex: 1;
+  /* Faz com que cada filho direto de .v-container ocupe espaço flexível igual */
+}
+
+.v-right {
+  gap: 0.5rem;
+  /* Espaçamento entre elementos filhos dentro do container com a classe .v-right */
+}
+
+.accordion {
+  margin-top: 2rem;
+  /* Espaço acima do acordeão */
+  border: none;
+  /* Remove qualquer borda padrão do acordeão */
+}
+
+.accordionItem {
+  background: white;
+  /* Fundo branco para cada item do acordeão */
+  border: 0.8px solid rgba(128, 128, 128, 0.143);
+  /* Borda fina cinza clara com transparência */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  overflow: hidden;
+  /* Esconde qualquer conteúdo que ultrapasse os limites do container */
+  margin-bottom: 20px;
+  /* Espaço abaixo de cada item para separar visualmente */
+}
+
+.accordionItem.expanded {
+  box-shadow: var(--shadow);
+  /* Sombra aplicada quando o item está expandido */
+  border-radius: 6px;
+  /* Ajusta o raio da borda quando expandido */
+}
+
+.accordionButton {
+  background: white;
+  /* Fundo branco para o botão do acordeão */
+  padding: 1rem;
+  /* Espaçamento interno ao redor do texto e ícone */
+  width: 100%;
+  /* Botão ocupa toda a largura do container pai */
+  justify-content: space-between;
+  /* Distribui o conteúdo do botão com espaço entre os itens */
+  cursor: pointer;
+  /* Cursor muda para indicar que é clicável */
+}
+
+.icon {
+  padding: 10px;
+  /* Espaço interno ao redor do ícone */
+  background: #eeeeff;
+  /* Fundo lilás claro para o ícone */
+  border-radius: 5px;
+  /* Cantos arredondados do ícone */
+}
+
+.icon svg {
+  fill: var(--blue);
+  /* Cor de preenchimento do SVG do ícone definida pela variável --blue */
+}
+
+.accordionButton .primaryText {
+  font-size: 1.1rem;
+  /* Define tamanho da fonte do texto principal dentro do botão do acordeão */
+}
+
+@media (max-width: 1024px) {
+  .v-container {
+    flex-direction: column;
+    /* Em telas menores, muda o container para layout em coluna (vertical) */
+  }
+}
+
+@media (max-width: 768px) {
+  .accordionButton .primaryText {
+    font-size: 0.8rem;
+    /* Diminui o tamanho da fonte do texto principal do botão em telas menores */
+  }
+}

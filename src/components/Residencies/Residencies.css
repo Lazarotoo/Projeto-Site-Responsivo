@@ -1,0 +1,104 @@
+/* Container principal do componente, com espaçamento entre elementos e overflow escondido */
+.r-container {
+  gap: 2rem; /* Espaço entre elementos filhos */
+  position: relative; /* Para posicionar elementos filhos absolutos */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassar o container */
+}
+
+/* Cabeçalho da seção com margem inferior */
+.r-head{
+  margin-bottom: 2rem;
+}
+
+/* Cartão individual com espaçamento, padding e bordas arredondadas */
+.r-card {
+  gap: 0.6rem; /* Espaço entre elementos filhos do cartão */
+  padding: 1rem; /* Espaçamento interno */
+  border-radius: 10px; /* Cantos arredondados */
+  max-width: max-content; /* Largura máxima baseada no conteúdo */
+  margin: auto; /* Centraliza horizontalmente */
+  transition: all 300ms ease-in; /* Transição suave para todas as propriedades em 300ms */
+}
+
+/* Imagem dentro do cartão, com largura total e limite máximo */
+.r-card > img {
+  width: 100%; /* Ocupa toda a largura do pai */
+  max-width: 15rem; /* Largura máxima de 15rem */
+}
+
+/* Segundo filho do cartão: título ou texto com fonte maior e negrito */
+.r-card > :nth-child(2) {
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: 600; /* Peso da fonte (negrito médio) */
+}
+
+/* Terceiro filho do cartão: texto com fonte maior */
+.r-card > :nth-child(3) {
+  font-size: 1.5rem; /* Tamanho da fonte maior */
+}
+
+/* Quarto filho do cartão: texto menor, com largura fixa */
+.r-card > :nth-child(4) {
+  font-size: 0.7rem; /* Fonte pequena */
+  width: 15rem; /* Largura fixa para controlar layout */
+}
+
+/* Efeito hover no cartão: escala, cursor, fundo gradiente e sombra */
+.r-card:hover {
+  scale: 1.025; /* Aumenta levemente o tamanho */
+  cursor: pointer; /* Cursor muda para indicar que é clicável */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%, /* Transparente no topo */
+    rgba(136, 160, 255, 0.46) 217.91% /* Azul translúcido na parte inferior */
+  );
+  box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21); /* Sombra suave azul */
+}
+
+/* Classe usada pelo swiper para rolagem horizontal, permite overflow visível */
+.swiper-horizontal{
+  overflow: visible;
+}
+
+/* Container dos botões de navegação, posicionamento absoluto no topo direita */
+.r-buttons{
+  position: absolute; /* Posicionamento absoluto relativo ao pai */
+  gap: 1rem; /* Espaçamento entre os botões */
+  top: -4rem; /* Posiciona acima do container principal */
+  right: 0; /* Alinha à direita */
+}
+
+/* Estilo dos botões dentro do container .r-buttons */
+.r-buttons button{
+  font-size: 1.2rem; /* Tamanho da fonte */
+  padding: .2rem .8rem; /* Espaçamento interno vertical e horizontal */
+  color: blue; /* Cor do texto */
+  border: none; /* Remove borda padrão */
+  border-radius: 5px; /* Cantos arredondados */
+  background-color: white; /* Fundo branco */
+  cursor: pointer; /* Cursor muda para indicar clicável */
+}
+
+/* Estilo do primeiro botão com fundo azul claro */
+.r-buttons>:nth-child(1)
+{
+  background-color: #EEEEFF;
+}
+
+/* Estilo do segundo botão com sombra para destaque */
+.r-buttons>:nth-child(2)
+{
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos para telas pequenas até 640px de largura */
+@media (max-width: 640px) {
+  /* Centraliza verticalmente o cabeçalho */
+  .r-head{
+    align-items: center;
+  }
+  /* Ajusta o posicionamento dos botões para padrão (estático) em mobile */
+  .r-buttons{
+    position: initial;
+  }
+}

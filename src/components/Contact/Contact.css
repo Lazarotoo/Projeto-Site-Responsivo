@@ -1,0 +1,103 @@
+/* Container principal que alinha os itens com espaçamento entre eles */
+.c-container {
+  justify-content: space-between;
+}
+
+/* Todos os filhos diretos div dentro de .c-container recebem flex: 1 para ocupar espaço igual */
+.c-container > div {
+  flex: 1;
+}
+
+/* Classe para a área direita, que ocupa 100% da largura disponível */
+.c-right {
+  width: 100%;
+}
+
+/* Classe para a área esquerda, com espaçamento interno entre elementos */
+.c-left {
+  gap: 0.5rem;
+}
+
+/* Container para os modos de contato com margem superior e espaçamento interno */
+.contactModes {
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+/* Cada linha dentro de contactModes recebe espaçamento maior entre elementos */
+.contactModes .row {
+  gap: 1.5rem;
+}
+
+/* Estilo para cada modo de contato: tamanho fixo, padding, borda leve, cantos arredondados e espaçamento interno */
+.mode {
+  width: 16rem;
+  padding: 1rem;
+  border: 0.8px solid rgba(128, 128, 128, 0.143);
+  border-radius: 5px;
+  gap: 1rem;
+  transition: all 300ms ease-in; /* Transição suave para mudanças visuais */
+}
+
+/* Botão dentro de .mode ocupa 100% da largura e tem cores e fontes definidas */
+.mode .button {
+  width: 100%;
+  background: var(--lightBlue);
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* O primeiro filho direto dentro de .mode tem largura total e espaçamento entre seus elementos */
+.mode > :nth-child(1) {
+  width: 100%;
+  gap: 1.6rem;
+}
+
+/* Texto primário dentro de detalhes de modo com tamanho e peso maior */
+.mode .detail .primaryText {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Ao passar o mouse sobre um .mode, ele aumenta de tamanho e ganha sombra para destaque */
+.mode:hover {
+  scale: 1.1;
+  box-shadow: var(--shadow);
+}
+
+/* Botão dentro do modo muda de cor e reduz ligeiramente de tamanho ao passar o mouse */
+.mode .button:hover {
+  background: var(--blue-gradient);
+  color: white;
+  scale: 0.8;
+}
+
+/* Responsividade para telas menores que 1024px */
+/* Container muda para coluna para empilhar os elementos verticalmente */
+@media (max-width: 1024px) {
+  .c-container {
+    flex-direction: column;
+  }
+  /* Alinha o conteúdo da área direita ao centro */
+  .c-right {
+    justify-content: center;
+  }
+}
+
+/* Mais ajustes responsivos para telas pequenas */
+/* contactModes ocupa 100% da largura */
+@media (max-width: 1024px) {
+  .contactModes {
+    width: 100%;
+  }
+  /* As linhas mudam para coluna e ocupam 100% da largura */
+  .row {
+    flex-direction: column;
+    width: 100%;
+  }
+  /* Cada modo de contato ocupa 100% da largura disponível */
+  .mode {
+    width: 100%;
+  }
+}

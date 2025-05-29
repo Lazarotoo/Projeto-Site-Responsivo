@@ -1,0 +1,126 @@
+:root {
+  --primary: #1f3e72; /* cor azul escura principal */
+  --secondary: rgba(255, 255, 255, 0.78); /* branco translúcido */
+  --black: #131110; /* preto quase puro */
+  --blue-gradient: linear-gradient(97.05deg, #4066ff 3.76%, #2949c6 100%); /* gradiente azul */
+  --orange-gradient: linear-gradient(270deg, #ffb978 0%, #ff922d 100%); /* gradiente laranja */
+  --blue: #4066ff; /* azul claro */
+  --lightBlue: #eeeeff; /* azul bem claro */
+  --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25); /* sombra azul suave */
+}
+
+* {
+  margin: 0; /* remove margens padrão */
+  padding: 0; /* remove padding padrão */
+  box-sizing: border-box; /* inclui borda e padding na largura/altura */
+  font-family: "Poppins", sans-serif; /* define fonte global */
+  scroll-behavior: smooth; /* rolagem suave */
+}
+a {
+  color: inherit; /* herda cor do elemento pai */
+  text-decoration: none; /* remove sublinhado padrão */
+}
+.paddings {
+  padding: 1.5rem; /* padding padrão para elementos */
+}
+
+.innerWidth {
+  width: 100%; /* largura total */
+}
+
+.flexCenter {
+  display: flex; /* ativa flexbox */
+  row-gap: 2rem; /* espaçamento vertical entre linhas */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  flex-wrap: wrap; /* permite quebra em múltiplas linhas */
+}
+.flexStart {
+  display: flex;
+  justify-content: flex-start; /* alinhamento horizontal à esquerda */
+  align-items: center; /* alinhamento vertical central */
+}
+
+.flexEnd {
+  display: flex;
+  justify-content: flex-end; /* alinhamento horizontal à direita */
+  align-items: center; /* alinhamento vertical central */
+}
+
+.flexColCenter {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+  flex-direction: column; /* empilha filhos verticalmente */
+}
+.flexColStart {
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: flex-start; /* alinha à esquerda */
+}
+.flexColEnd {
+  display: flex;
+  flex-direction: column; /* empilha verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: flex-end; /* alinha à direita */
+}
+
+.primaryText {
+  color: #1f3e72; /* cor azul escura */
+  font-weight: bold; /* texto em negrito */
+  font-size: 2rem; /* tamanho grande */
+}
+
+.secondaryText {
+  color: rgb(140 139 139); /* cinza claro */
+  font-size: 0.9rem; /* tamanho pequeno */
+}
+.orangeText {
+  color: orange; /* cor laranja */
+  font-size: 1.5rem; /* tamanho médio */
+  font-weight: 600; /* semi-negrito */
+}
+
+/* media queries */
+@media (min-width: 1536px) {
+  .innerWidth {
+    max-width: 1280px; /* limite máximo de largura */
+    margin: auto; /* centraliza horizontalmente */
+  }
+}
+
+@media (min-width: 640px) {
+  .paddings {
+    padding: 4rem; /* aumenta padding para telas médias */
+  }
+}
+
+@media (min-width: 1280px), (min-width: 768px) {
+  .paddings {
+    padding: 2rem; /* padding intermediário para telas grandes e médias */
+  }
+}
+
+@media (max-width: 640px) {
+  .primaryText {
+    font-size: 1.5rem; /* reduz tamanho do texto em telas pequenas */
+  }
+  .orangeText {
+    font-size: 1.2rem; /* reduz tamanho do texto laranja em telas pequenas */
+  }
+}
+
+.button {
+  font-weight: 500; /* peso médio da fonte */
+  padding: 0.6rem 1.4rem; /* espaçamento interno */
+  color: white; /* cor do texto */
+  background: var(--blue-gradient); /* fundo com gradiente azul */
+  border: none; /* sem borda */
+  border-radius: 4px; /* cantos arredondados */
+  transition: all 300ms ease-in; /* transição suave para efeitos */
+}
+.button:hover {
+  cursor: pointer; /* cursor de mãozinha ao passar o mouse */
+  transform: scale(1.1); /* aumenta o botão ao passar o mouse */
+}

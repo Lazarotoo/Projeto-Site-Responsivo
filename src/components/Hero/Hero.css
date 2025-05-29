@@ -1,0 +1,105 @@
+.hero-wrapper {
+  color: white; /* Texto branco para todos os elementos dentro */
+  position: relative; /* Para posicionar elementos internos absolutamente em relação a este */
+  z-index: 1; /* Garante que fique acima de elementos com z-index menor */
+  padding-bottom: 2rem; /* Espaço interno embaixo */
+}
+
+.hero-container {
+  justify-content: space-around; /* Espaça os filhos horizontalmente com espaço ao redor */
+  align-items: flex-end; /* Alinha os filhos verticalmente no final (embaixo) */
+}
+
+/* left side */
+.hero-left {
+  gap: 3rem; /* Espaço entre elementos filhos dentro da coluna */
+}
+
+.hero-title {
+  position: relative; /* Para o círculo laranja ser posicionado relativamente a este */
+  z-index: 1; /* Fica acima do círculo laranja */
+}
+
+.hero-title > h1 {
+  font-weight: 600; /* Fonte semi-negrito */
+  font-size: 3.8rem; /* Tamanho grande do título */
+  line-height: 4rem; /* Espaçamento entre linhas */
+}
+
+.orange-circle {
+  height: 4rem; /* Altura do círculo */
+  width: 4rem; /* Largura do círculo (formato perfeito) */
+  background: var(--orange-gradient); /* Fundo com gradiente laranja (variável CSS) */
+  border-radius: 999px; /* Forma arredondada para ser círculo */
+  position: absolute; /* Posicionamento absoluto em relação ao pai (hero-title) */
+  right: 28%; /* Distância da borda direita */
+  top: -10%; /* Um pouco acima da borda superior */
+  z-index: -1; /* Fica atrás do texto do título */
+}
+
+.search-bar {
+  background-color: white; /* Fundo branco */
+  border-radius: 5px; /* Bordas arredondadas */
+  border: 3px solid rgba(120, 120, 120, 0.374); /* Borda cinza clara e semi-transparente */
+  padding: 0.5rem 1rem; /* Espaçamento interno vertical e horizontal */
+  width: 100%; /* Ocupa toda largura disponível */
+  justify-content: space-between; /* Espaça itens dentro da barra igualmente */
+}
+
+.search-bar > input {
+  border: none; /* Remove borda padrão do input */
+  outline: none; /* Remove contorno azul ao focar */
+}
+
+.stats {
+  width: 100%; /* Ocupa toda largura do container */
+  justify-content: space-between; /* Espaça elementos igualmente */
+}
+
+.stat > :nth-child(1) {
+  font-size: 2rem; /* Tamanho maior para o primeiro filho (provavelmente número) */
+}
+
+.stat > :nth-child(1) > :last-child {
+  color: orange; /* Deixa o último filho do primeiro filho na cor laranja */
+}
+
+/* right side */
+.image-container {
+  width: 30rem; /* Largura fixa */
+  height: 35rem; /* Altura fixa */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a borda */
+  border-radius: 15rem 15rem 0 0; /* Bordas arredondadas só na parte superior esquerda e direita */
+  border: 8px solid rgba(255, 255, 255, 0.12); /* Borda branca muito transparente */
+}
+
+.image-container > img {
+  width: 100%; /* A imagem ocupa toda largura do container */
+  height: 100%; /* A imagem ocupa toda altura do container */
+}
+
+/* mobile screens */
+@media (max-width: 640px) {
+  .hero-container {
+    margin-top: 2rem; /* Espaço acima para a seção */
+  }
+  .hero-title > h1 {
+    font-size: 2.5rem; /* Título menor em telas pequenas */
+    line-height: 3rem; /* Ajusta espaçamento para texto menor */
+  }
+  .image-container {
+    width: 95%; /* A imagem quase ocupa toda largura da tela */
+    height: 25rem; /* Altura reduzida */
+  }
+  .stats {
+    justify-content: center; /* Centraliza estatísticas */
+    gap: 1.5rem; /* Espaço entre itens */
+    font-weight: wrap; /* Essa propriedade está incorreta, provavelmente queria usar flex-wrap ou outra */
+  }
+  .stat > :nth-child(1) {
+    font-size: 1.5rem; /* Tamanho menor para números */
+  }
+  .stat > :nth-child(2) {
+    font-size: 0.8rem; /* Tamanho menor para texto secundário */
+  }
+}

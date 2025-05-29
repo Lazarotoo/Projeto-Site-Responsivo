@@ -1,0 +1,59 @@
+/* Wrapper do header: fica fixo no topo com z-index alto para sobrepor outros elementos */
+.h-wrapper {
+  z-index: 99;          /* Garante que o header fique sobre outros elementos */
+  position: sticky;     /* Fixa o header no topo ao rolar a página */
+  top: 0;               /* Posição fixa no topo da janela */
+}
+
+/* Container interno do header com espaçamento vertical e layout distribuído */
+.h-container {
+  padding-top: 1rem;    /* Espaço acima do conteúdo */
+  padding-bottom: 1rem; /* Espaço abaixo do conteúdo */
+  color: var(--secondary); /* Cor do texto usando variável CSS */
+  justify-content: space-between; /* Espaço distribuído entre os elementos */
+}
+
+/* Menu do header com espaçamento entre os itens */
+.h-menu {
+  gap: 2rem; /* Espaço entre os itens do menu */
+}
+
+/* Cursor muda para pointer quando o mouse passa por cima dos itens do menu */
+.h-menu > *:hover {
+  cursor: pointer;
+}
+
+/* Ícone do menu (hambúrguer) escondido por padrão */
+.menu-icon {
+  display: none;
+}
+
+/* Estilos aplicados em telas com largura máxima de 768px (mobile/tablet) */
+@media (max-width: 768px) {
+  /* Ícone do menu fica visível em telas menores */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Menu no modo mobile: 
+     - cor do texto preta
+     - posicionado absolutamente
+     - itens em coluna
+     - fundo branco com bordas arredondadas e sombra para destacar */
+  .h-menu {
+    color: var(--black);
+    position: absolute;
+    gap: 2rem;
+    font-weight: 500;
+    flex-direction: column; /* Itens empilhados verticalmente */
+    right: 4rem;            /* Distância da borda direita */
+    top: 3rem;              /* Distância do topo */
+    background: white;
+    display: flex;          /* Exibe como flex container */
+    border-radius: 10px;
+    transition: all 200ms ease; /* Animação suave para mudanças */
+    align-items: flex-start;     /* Alinha os itens no início da linha */
+    padding: 3rem;               /* Espaçamento interno */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05); /* Sombra leve */
+  }
+}

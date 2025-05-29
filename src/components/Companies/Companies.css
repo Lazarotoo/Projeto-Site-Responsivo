@@ -1,0 +1,8 @@
+.c-container {
+    justify-content: space-around; /* Distribui os itens dentro do container com espaço ao redor */
+    gap: 1rem; /* Espaçamento de 1rem entre os itens filhos */
+}
+
+.c-container > img {
+    width: 9rem; /* Define a largura das imagens filhas diretas para 9 rem */
+}

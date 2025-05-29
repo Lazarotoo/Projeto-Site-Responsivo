@@ -1,0 +1,16 @@
+.App {
+  position: relative; /* Define que o elemento .App tem posicionamento relativo para controlar elementos filhos posicionados */
+  overflow-x: clip; /* Impede que conteúdo ultrapasse horizontalmente, cortando qualquer excesso fora do limite */
+}
+.App > :nth-child(1) {
+  background: var(--black); /* Aplica a cor preta definida na variável CSS --black ao primeiro filho direto de .App */
+  position: relative; /* Define posicionamento relativo para permitir controle de elementos filhos posicionados */
+}
+.white-gradient {
+  position: absolute; /* Posiciona o elemento de forma absoluta em relação ao ancestral posicionado */
+  width: 20rem; /* Define largura fixa de 20 rem */
+  height: 20rem; /* Define altura fixa de 20 rem */
+  background: rgba(255, 255, 255, 0.522); /* Fundo branco semitransparente */
+  filter: blur(100px); /* Aplica um desfoque intenso para criar efeito de gradiente suave */
+  border-radius: 100px; /* Deixa as bordas arredondadas, quase circular */
+}
